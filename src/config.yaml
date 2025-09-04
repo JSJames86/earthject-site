@@ -1,30 +1,46 @@
 site:
-  name: AstroWind
-  site: 'https://astrowind.vercel.app'
-  base: '/'
-  trailingSlash: false
+  name: "Earthject"
+  title: "Earthject — Sustainable Solutions for a Better World"
+  description: "Crowdfunding climate action through community impact"
+  url: "https://earthject.com"  # Replace with your custom domain when ready
+  author: "Earthject Team"
+  language: "en-US"
 
-  googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
+social:
+  twitter: "https://x.com/earthject?s=21&t=43GaHG5AuaSXcDsOKAFLTQ"
+  github: "https://github.com/JSjames86/earthject-site"
+  linkedin: "https://www.linkedin.com/company/earthject"
+  instagram: "https://www.instagram.com/earthject"
+  facebook: "https://www.facebook.com/earthject"
+  tiktok: "https://www.tiktok.com/@earthject"
+  discord: "https://discord.gg/7c45mK2pTN"
+  reddit: "https://www.reddit.com/r/Earthject"
+  patreon: "https://www.patreon.com/user?u=183338080&utm_campaign=creatorshare_creator"
 
-# Default SEO metadata
+openGraph:
+  type: "website"
+  title: "Earthject — Sustainable Solutions for a Better World"
+  description: "Crowdfunding climate action through community impact"
+  image: "/assets/images/og-image.png"  # Replace with your own Open Graph image
+
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: "Earthject"
+    template: "%s — Earthject"
+  description: "Crowdfunding climate action through community impact."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: "Earthject"
     images:
-      - url: '~/assets/images/default.png'
+      - url: "/assets/images/og-image.png"
         width: 1200
         height: 628
     type: website
   twitter:
-    handle: '@arthelokyo'
-    site: '@arthelokyo'
+    handle: '@earthject'
+    site: '@earthject'
     cardType: summary_large_image
 
 i18n:
@@ -38,25 +54,25 @@ apps:
 
     post:
       isEnabled: true
-      permalink: '/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
+      permalink: '/%slug%'
       robots:
         index: true
 
     list:
       isEnabled: true
-      pathname: 'blog' # Blog main path, you can change this to "articles" (/articles)
+      pathname: 'blog'
       robots:
         index: true
 
     category:
       isEnabled: true
-      pathname: 'category' # Category main path /category/some-category, you can change this to "group" (/group/some-category)
+      pathname: 'category'
       robots:
         index: true
 
     tag:
       isEnabled: true
-      pathname: 'tag' # Tag main path /tag/some-tag, you can change this to "topics" (/topics/some-category)
+      pathname: 'tag'
       robots:
         index: false
 
