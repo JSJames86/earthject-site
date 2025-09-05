@@ -53,7 +53,7 @@ const metadata = {
     items={[
       {
         title: 'Ecosystem Approach',
-        description: 'We\'re an ecosystem for impact, not just a funding platform. We connect projects, supporters, and collaborators in a thriving community.',
+        description: "We're an ecosystem for impact, not just a funding platform. We connect projects, supporters, and collaborators in a thriving community.",
         icon: 'tabler:plant',
       },
       {
@@ -154,4 +154,58 @@ const metadata = {
     items={[
       {
         title: 'Renewable Energy',
-        description: 'Solar installations, wind projects, and clean energy access for underserved communities
+        description: 'Solar installations, wind projects, and clean energy access for underserved communities.',
+      },
+      {
+        title: 'Ecosystem Protection',
+        description: 'Forest conservation, ocean cleanup, biodiversity preservation, and habitat restoration.',
+      },
+      {
+        title: 'Sustainable Communities',
+        description: 'Urban gardens, composting programs, sustainable transportation, and green infrastructure.',
+      },
+      {
+        title: 'Climate Education',
+        description: 'Environmental education programs, climate literacy, and sustainability skill-building.',
+      },
+      {
+        title: 'Green Innovation',
+        description: 'Clean technology development, sustainable products, and climate solution research.',
+      },
+      {
+        title: 'Policy and Advocacy',
+        description: 'Grassroots organizing, policy research, and advocacy for environmental justice.',
+      },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Every Project Matters</h3>
+      Whether you're organizing a neighborhood cleanup or developing breakthrough clean technology, Earthject provides the platform, community, and resources to help your vision become reality.
+    </Fragment>
+  </Content>
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Start Your Project',
+        href: '/start-project',
+        icon: 'tabler:rocket',
+      },
+      {
+        variant: 'secondary',
+        text: 'Join Our Community',
+        href: '/community',
+        icon: 'tabler:users',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Ready to Join the Movement?
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Whether you're a project creator, supporter, or collaborator, there's a place for you in the Earthject community. Let's build a sustainable future together.
+    </Fragment>
+  </CallToAction>
+</Layout>
