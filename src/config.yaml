@@ -21,4 +21,4 @@ openGraph:
   type: "website"
   title: "Earthject — Sustainable Solutions for a Better World"
   description: "Crowdfunding climate action through community impact"
-  image: "/assets/images/og-image.png"  # Replace with your own Open Graph image
+  image: "/assets/images/og-image.png"  # Make sure this file exists in your repo
