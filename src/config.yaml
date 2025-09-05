@@ -1,4 +1,10 @@
-site: "https://earthject.com"
+SITE:
+  site: "https://earthject.com"
+  name: "Earthject"
+  base: "/"
+  trailingSlash: false
+  googleSiteVerificationId: ""
+
 title: "Earthject — Sustainable Solutions for a Better World"
 description: "Crowdfunding climate action through community impact"
 author: "Earthject Team"
@@ -19,4 +25,4 @@ openGraph:
   type: "website"
   title: "Earthject — Sustainable Solutions for a Better World"
   description: "Crowdfunding climate action through community impact"
-  image: "/assets/images/og-image.png"  # Make sure this file exists in your repo
+  image: "/assets/images/og-image.png"
