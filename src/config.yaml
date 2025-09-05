@@ -1,9 +1,8 @@
-SITE:
-  site: "https://www.earthject.com"
-  name: "Earthject"
-  base: "/"
-  trailingSlash: false
-  googleSiteVerificationId: ""
+site: "https://www.earthject.com"
+name: "Earthject"
+base: "/"
+trailingSlash: false
+googleSiteVerificationId: ""
 
 title: "Earthject — Sustainable Solutions for a Better World"
 description: "Crowdfunding climate action through community impact"
