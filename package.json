@@ -25,7 +25,8 @@
     "flowbite": "^2.2.0",
     "swiper": "^11.0.5",
     "astro-icon": "^1.1.0",
-    "reading-time": "^1.5.0"
+    "reading-time": "^1.5.0",
+    "@astrojs/rss": "^4.0.0"
   },
   "devDependencies": {
     "@astrojs/tailwind": "^5.1.0",
