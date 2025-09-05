@@ -1,0 +1,280 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+
+const metadata = {
+  title: 'How It Works — Earthject Platform Guide',
+  description: 'Learn how Earthject works for project creators and supporters. Simple steps to launch climate projects or support existing initiatives.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Start Your Project',
+        href: '/start-project',
+        icon: 'tabler:rocket',
+      },
+      { text: 'Browse Projects', href: '/projects' },
+    ]}
+  >
+    <Fragment slot="title">
+      How <span class="text-accent dark:text-white highlight">Earthject</span> Works
+    </Fragment>
+    <Fragment slot="subtitle">
+      <span class="text-xl">
+        Whether you're launching a climate project or supporting existing initiatives, Earthject makes it simple to create lasting environmental impact.
+      </span>
+    </Fragment>
+  </Hero>
+
+  <!-- For Project Creators -->
+  <Steps
+    title="For Project Creators: Launch Your Climate Vision"
+    subtitle="Turn your sustainability idea into a funded, community-supported reality"
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium">Share Your Vision</span>',
+        description: 'Create a compelling project page with your story, goals, timeline, and funding target. Include photos, videos, and detailed plans to help supporters understand your impact.',
+        icon: 'tabler:lightbulb',
+      },
+      {
+        title: 'Step 2: <span class="font-medium">Set Your Goals</span>',
+        description: 'Define clear, measurable objectives and funding milestones. Choose your project category, timeline, and impact metrics so supporters know exactly what their contributions will achieve.',
+        icon: 'tabler:target',
+      },
+      {
+        title: 'Step 3: <span class="font-medium">Launch & Engage</span>',
+        description: 'Publish your project and start building your community. Share updates, respond to questions, and engage with supporters through comments and project updates.',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Step 4: <span class="font-medium">Build Community</span>',
+        description: 'Use Earthject\'s social features to connect with supporters. Receive "Flowers" (likes), "Leaves" (shares), and "Seeds" (donations) as your community grows.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Step 5: <span class="font-medium">Track & Deliver</span>',
+        description: 'Monitor your progress, provide regular updates, and track measurable impact. Use our built-in tools to document results and maintain transparency with your supporters.',
+        icon: 'tabler:chart-line',
+      },
+      {
+        title: 'Step 6: <span class="font-medium">Scale Impact</span>',
+        description: 'Share results, celebrate successes, and potentially launch follow-up projects. Help other creators learn from your experience and expand the impact ecosystem.',
+        icon: 'tabler:trending-up',
+      },
+    ]}
+  />
+
+  <!-- For Supporters -->
+  <Steps
+    title="For Supporters: Find & Fund Climate Solutions"
+    subtitle="Discover projects you care about and make a real difference with every contribution"
+    isReversed
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium">Explore Projects</span>',
+        description: 'Browse active projects by category, location, or impact type. Filter by renewable energy, conservation, community gardens, clean tech, and more to find causes that match your passions.',
+        icon: 'tabler:search',
+      },
+      {
+        title: 'Step 2: <span class="font-medium">Learn & Connect</span>',
+        description: 'Read project details, watch videos, and connect with creators. Ask questions, offer skills, or simply show support by giving "Flowers" and sending "Leaves" to projects you love.',
+        icon: 'tabler:message-circle',
+      },
+      {
+        title: 'Step 3: <span class="font-medium">Plant Seeds</span>',
+        description: 'Make contributions of any size to projects you want to support. Choose from suggested amounts or set your own. Every "seed" you plant helps projects grow toward their goals.',
+        icon: 'tabler:coin',
+      },
+      {
+        title: 'Step 4: <span class="font-medium">Stay Connected</span>',
+        description: 'Receive updates from projects you support. Get notifications about milestones, see photos and videos of progress, and celebrate successes with the community.',
+        icon: 'tabler:bell',
+      },
+      {
+        title: 'Step 5: <span class="font-medium">Track Your Impact</span>',
+        description: 'See the cumulative impact of all your contributions. Track trees planted, carbon reduced, communities helped, and other meaningful metrics across all projects you\'ve supported.',
+        icon: 'tabler:activity',
+      },
+      {
+        title: 'Step 6: <span class="font-medium">Expand Your Garden</span>',
+        description: 'Discover new projects, refer friends, and potentially launch your own initiatives. Help grow the Earthject community and multiply your environmental impact.',
+        icon: 'tabler:share',
+      },
+    ]}
+  />
+
+  <!-- Unique Features -->
+  <Features
+    id="features"
+    tagline="What Makes Earthject Special"
+    title="More Than Just Funding — It's an Ecosystem"
+    subtitle="Earthject's unique features create deeper connections between projects and supporters, making climate action engaging and trackable."
+    items={[
+      {
+        title: 'Social Climate Action',
+        description: 'Give Flowers (likes), Send Leaves (shares), and Plant Seeds (donations) to create an engaging, social approach to environmental support.',
+        icon: 'tabler:heart',
+      },
+      {
+        title: 'Impact Dashboard',
+        description: 'Track your personal environmental impact across all projects you support. See your total carbon footprint reduction, trees planted, and communities helped.',
+        icon: 'tabler:dashboard',
+      },
+      {
+        title: 'Collaboration Tools',
+        description: 'Built-in messaging, skill-sharing, and collaboration features help supporters and creators work together beyond just funding.',
+        icon: 'tabler:tools',
+      },
+      {
+        title: 'Verified Impact',
+        description: 'All projects provide regular updates with photos, data, and measurable outcomes. We help ensure transparency and accountability.',
+        icon: 'tabler:shield',
+      },
+      {
+        title: 'Community Recognition',
+        description: 'Earn badges, recognition, and community status based on your contributions, engagement, and positive impact on the platform.',
+        icon: 'tabler:award',
+      },
+      {
+        title: 'Local to Global',
+        description: 'Support projects in your neighborhood or around the world. Filter by location to find local initiatives or global movements.',
+        icon: 'tabler:world',
+      },
+    ]}
+  />
+
+  <!-- Project Types -->
+  <Content
+    tagline="Project Categories"
+    title="What Types of Projects Can You Launch or Support?"
+    subtitle="Earthject supports a wide range of climate and sustainability initiatives, from grassroots community projects to innovative technology solutions."
+    items={[
+      {
+        title: 'Renewable Energy',
+        description: 'Solar installations, wind projects, community energy systems, and clean energy access initiatives.',
+      },
+      {
+        title: 'Conservation & Restoration',
+        description: 'Forest protection, habitat restoration, biodiversity projects, and ecosystem preservation efforts.',
+      },
+      {
+        title: 'Sustainable Communities',
+        description: 'Community gardens, composting programs, sustainable transportation, and green infrastructure projects.',
+      },
+      {
+        title: 'Clean Technology',
+        description: 'Innovation in clean tech, sustainable products, carbon capture, and environmental monitoring systems.',
+      },
+      {
+        title: 'Education & Awareness',
+        description: 'Environmental education programs, climate literacy initiatives, and sustainability skill-building workshops.',
+      },
+      {
+        title: 'Policy & Advocacy',
+        description: 'Grassroots organizing, policy research, environmental justice campaigns, and advocacy initiatives.',
+      },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Every Project Matters</h3>
+      From small community initiatives to large-scale technology projects, Earthject provides the platform and tools you need to create meaningful environmental impact.
+    </Fragment>
+  </Content>
+
+  <!-- Fees & Transparency -->
+  <Content
+    isReversed
+    tagline="Transparent Pricing"
+    title="Simple, Fair Fees That Maximize Impact"
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4">How Earthject Makes Money</h3>
+      <p class="text-lg mb-4">
+        <strong>Platform Fee:</strong> We charge 5% of successfully funded projects to cover platform costs, payment processing, and continued development.
+      </p>
+      <p class="text-lg mb-4">
+        <strong>Payment Processing:</strong> Standard payment processing fees apply (typically 2.9% + $0.30 per transaction).
+      </p>
+      <p class="text-lg mb-4">
+        <strong>No Hidden Costs:</strong> No setup fees, no monthly charges, no listing fees. You only pay when your project successfully reaches its funding goals.
+      </p>
+      <p class="text-lg">
+        <strong>Transparency:</strong> All fees are clearly displayed before you launch your project, and detailed financial reporting is available for all funded initiatives.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-slate-800"></div>
+    </Fragment>
+  </Content>
+
+  <!-- FAQs -->
+  <FAQs
+    title="Frequently Asked Questions"
+    subtitle="Common questions about using the Earthject platform"
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'How long does it take to get approved for a project?',
+        description: 'Most projects are reviewed and approved within 2-3 business days. We check for completeness, feasibility, and alignment with our sustainability mission.',
+      },
+      {
+        title: 'What happens if my project doesn\'t reach its funding goal?',
+        description: 'Earthject uses an all-or-nothing funding model. If you don\'t reach your goal by the deadline, all contributions are returned to supporters and no fees are charged.',
+      },
+      {
+        title: 'Can I update my project after it\'s launched?',
+        description: 'Yes! You can add updates, photos, videos, and progress reports throughout your campaign. Major changes to funding goals require approval.',
+      },
+      {
+        title: 'How do I track and report on my project\'s impact?',
+        description: 'Earthject provides built-in tools for tracking milestones, uploading progress photos, and reporting measurable outcomes. Regular updates help maintain supporter engagement.',
+      },
+      {
+        title: 'Can supporters contribute more than money?',
+        description: 'Absolutely! Supporters can offer skills, resources, connections, and volunteer time. Our collaboration tools help facilitate these non-financial contributions.',
+      },
+      {
+        title: 'What support does Earthject provide to project creators?',
+        description: 'We offer project creation guides, best practices resources, community forums, and direct support for technical issues or questions about the platform.',
+      },
+    ]}
+  />
+
+  <!-- Call to Action -->
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Launch Your Project',
+        href: '/start-project',
+        icon: 'tabler:rocket',
+      },
+      {
+        variant: 'secondary',
+        text: 'Support Existing Projects',
+        href: '/projects',
+        icon: 'tabler:heart',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Ready to Make an Impact?
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Whether you have a project to launch or want to support existing initiatives, join the Earthject community and help create a more sustainable future.
+    </Fragment>
+  </CallToAction>
+</Layout>
