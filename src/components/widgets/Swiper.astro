@@ -1,92 +1,88 @@
 ---
-import { getAsset } from '~/utils/permalinks';
+// You will need to install swiper.js with `npm install swiper`
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
 
-// Define the content for the carousel. You can add more images and videos here.
-const slides = [
-  {
-    type: 'image',
-    src: getAsset('/images/image1.jpg'),
-    alt: 'A photo of a lush, green forest.',
-  },
-  {
-    type: 'video',
-    src: getAsset('/images/video1.mp4'),
-    alt: 'A video of a team cleaning up a beach.',
-  },
-  {
-    type: 'image',
-    src: getAsset('/images/image2.jpg'),
-    alt: 'A photo of a solar panel installation.',
-  },
-  {
-    type: 'video',
-    src: getAsset('/images/video2.mp4'),
-    alt: 'A video showing a wind turbine in action.',
-  },
-];
+import Swiper from 'swiper';
+import { Navigation, Pagination, EffectFade } from 'swiper/modules';
+
+const uniqueId = 'swiper-' + Math.random().toString(36).substring(7);
 ---
 
-<section class="w-full h-screen relative overflow-hidden">
-  <!-- Swiper container -->
-  <div class="swiper-container w-full h-full">
+<div class="relative w-full aspect-[4/3] sm:aspect-video overflow-hidden group">
+  <div id={uniqueId} class="swiper h-full">
     <div class="swiper-wrapper">
-      {slides.map((slide) => (
-        <div class="swiper-slide w-full h-full relative">
-          {slide.type === 'image' ? (
-            <img
-              src={slide.src}
-              alt={slide.alt}
-              class="w-full h-full object-cover"
-            />
-          ) : (
-            <video
-              src={slide.src}
-              alt={slide.alt}
-              class="w-full h-full object-cover"
-              autoplay
-              loop
-              muted
-              playsinline
-            ></video>
-          )}
-          <!-- Optional: Add an overlay for better text contrast -->
-          <div class="absolute inset-0 bg-black bg-opacity-30"></div>
-          <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white p-4 text-center">
-            <h2 class="text-3xl md:text-5xl font-bold">{slide.alt}</h2>
-          </div>
-        </div>
-      ))}
-    </div>
+      <!-- Slide 1: Image -->
+      <div class="swiper-slide relative">
+        <img
+          src="/images/image1.jpg"
+          class="w-full h-full object-cover"
+          alt="A vibrant green forest with sunlight filtering through the trees, symbolizing environmental health."
+        />
+      </div>
 
-    <!-- Add Pagination -->
+      <!-- Slide 2: Video -->
+      <div class="swiper-slide relative">
+        <video class="w-full h-full object-cover" controls muted loop>
+          <source src="/images/video1.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <!-- Slide 3: Image -->
+      <div class="swiper-slide relative">
+        <img
+          src="/images/image2.jpg"
+          class="w-full h-full object-cover"
+          alt="A wind turbine farm at sunset, showcasing renewable energy solutions."
+        />
+      </div>
+
+      <!-- Slide 4: Video -->
+      <div class="swiper-slide relative">
+        <video class="w-full h-full object-cover" controls muted loop>
+          <source src="/images/video2.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+    <!-- If we need pagination -->
     <div class="swiper-pagination"></div>
 
-    <!-- Add Navigation Arrows -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev w-10 h-10 bg-white/50 rounded-full flex items-center justify-center transition-opacity duration-300 opacity-0 group-hover:opacity-100"></div>
+    <div class="swiper-button-next w-10 h-10 bg-white/50 rounded-full flex items-center justify-center transition-opacity duration-300 opacity-0 group-hover:opacity-100"></div>
   </div>
-</section>
+</div>
 
 <script>
-  import Swiper from 'swiper';
-  import { Pagination, Navigation } from 'swiper/modules';
   import 'swiper/css';
-  import 'swiper/css/pagination';
   import 'swiper/css/navigation';
+  import 'swiper/css/pagination';
+  import 'swiper/css/effect-fade';
 
-  const swiper = new Swiper('.swiper-container', {
-    modules: [Pagination, Navigation],
-    loop: true,
-    autoplay: {
-      delay: 5000,
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
+  import Swiper from 'swiper';
+  import { Navigation, Pagination, EffectFade } from 'swiper/modules';
+
+  document.addEventListener('astro:load', () => {
+    new Swiper(`#${uniqueId}`, {
+      modules: [Navigation, Pagination, EffectFade],
+      effect: 'fade',
+      loop: true,
+      fadeEffect: {
+        crossFade: true
+      },
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
   });
 </script>
