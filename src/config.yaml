@@ -1,13 +1,15 @@
-site: "https://www.earthject.com"
-name: "Earthject"
-base: "/"
-trailingSlash: false
-googleSiteVerificationId: ""
+site:
+  site: "https://www.earthject.com"
+  name: "Earthject"
+  base: "/"
+  trailingSlash: false
+  googleSiteVerificationId: ""
 
-title: "Earthject — Sustainable Solutions for a Better World"
-description: "Crowdfunding climate action through community impact"
-author: "Earthject Team"
-language: "en-US"
+metadata:
+  title: "Earthject — Sustainable Solutions for a Better World"
+  description: "Crowdfunding climate action through community impact"
+  author: "Earthject Team"
+  language: "en-US"
 
 social:
   twitter: "https://x.com/earthject?s=21&t=43GaHG5AuaSXcDsOKAFLTQ"
