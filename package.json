@@ -30,7 +30,8 @@
     "limax": "^4.1.0",
     "astro-embed": "^0.7.2",
     "tailwind-merge": "^2.2.0",
-    "@fontsource-variable/inter": "^5.0.20"
+    "@fontsource-variable/inter": "^5.0.20",
+    "unpic": "^3.18.0"
   },
   "devDependencies": {
     "@astrojs/tailwind": "^5.1.0",
