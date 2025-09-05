@@ -24,7 +24,7 @@
     "astro-robots-txt": "^1.0.0",
     "flowbite": "^2.2.0",
     "swiper": "^11.0.5",
-    "astro-icon": "^0.8.2",
+    "@astrojs/icon": "^1.1.0",
     "reading-time": "^1.5.0"
   },
   "devDependencies": {
