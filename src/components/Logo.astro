@@ -1,9 +1,10 @@
 ---
-import { SITE } from 'astrowind:config';
+import { getAsset } from '~/utils/permalinks';
 ---
 
-<span
-  class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
->
-  🚀 {SITE?.name}
-</span>
+<img
+  src={getAsset('/assets/images/FA3F2988-AC80-41C4-BF34-D851F04A3039.PNG')}
+  alt="Earthject Logo"
+  width="150"
+  height="50"
+/>
