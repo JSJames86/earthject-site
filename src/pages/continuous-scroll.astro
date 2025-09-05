@@ -1,8 +1,6 @@
 ---
 import { getAsset } from '~/utils/permalinks';
 import Layout from '~/layouts/PageLayout.astro';
-import Header from '~/components/widgets/Header.astro';
-import Footer from '~/components/widgets/Footer.astro';
 import Swiper from '~/components/widgets/Swiper.astro';
 import { headerData, footerData } from '~/navigation';
 
@@ -12,12 +10,7 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- Sticky Header with Logo -->
-  <Header
-    {...headerData}
-    id="sticky-header"
-    isSticky={true}
-  />
+  <!-- The main Layout provides the header and footer, so we only need the body content here. -->
   
   <!-- Carousel Section -->
   <Swiper />
@@ -52,8 +45,6 @@ const metadata = {
       </p>
     </div>
   </section>
-  
-  <Footer {...footerData} />
 </Layout>
 
 <script>
