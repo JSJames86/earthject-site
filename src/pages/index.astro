@@ -1,122 +1,241 @@
-/* Custom Earthject Brand Colors */
-:root {
-  --earthject-primary: #30602c;
-  --earthject-accent: #ddaf27;
-  --earthject-primary-light: #4a7c46;
-  --earthject-primary-dark: #1e3d1b;
-  --earthject-accent-light: #e8c04d;
-  --earthject-accent-dark: #c49a1f;
-}
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
-/* Apply primary green to buttons and key elements */
-.btn-primary, 
-.bg-primary,
-[data-aw-toggle-color-scheme] {
-  background-color: var(--earthject-primary) !important;
-  border-color: var(--earthject-primary) !important;
-}
+const metadata = {
+  title: 'Earthject — Community-Powered Solutions for a Sustainable Future',
+  ignoreTitleTemplate: true,
+};
+---
 
-.btn-primary:hover {
-  background-color: var(--earthject-primary-dark) !important;
-  border-color: var(--earthject-primary-dark) !important;
-}
+<Layout metadata={metadata}>
+  <!-- Hero Widget -->
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Start a Project',
+        href: '/start-project',
+        icon: 'tabler:rocket',
+      },
+      { 
+        text: 'Browse Projects', 
+        href: '/projects' 
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      🌍 <span class="text-accent dark:text-white highlight">Earthject</span>: Community-Powered Solutions for a Sustainable Future
+    </Fragment>
 
-/* Apply accent gold to highlights and secondary elements */
-.text-accent,
-.highlight {
-  color: var(--earthject-accent) !important;
-}
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        More than crowdfunding — <span class="font-semibold">Earthject</span> is a platform where people, projects, and technology unite to create lasting impact.
+      </span>
+      <span class="block mb-1 sm:hidden font-bold text-blue-600">Earthject: Sustainable Solutions.</span>
+      Join a community dedicated to climate action and positive change.
+    </Fragment>
+  </Hero>
 
-.btn-accent,
-.bg-accent {
-  background-color: var(--earthject-accent) !important;
-  border-color: var(--earthject-accent) !important;
-  color: var(--earthject-primary-dark) !important;
-}
+  <!-- Note Widget -->
+  <Note />
 
-.btn-accent:hover {
-  background-color: var(--earthject-accent-dark) !important;
-  border-color: var(--earthject-accent-dark) !important;
-}
+  <!-- Features Widget -->
+  <Features
+    id="features"
+    tagline="Why Earthject"
+    title="More Than Crowdfunding"
+    subtitle="Earthject creates an ecosystem where funding, collaboration, and real-world action connect to drive meaningful change."
+    items={[
+      {
+        title: 'Community-Driven Impact',
+        description: 'Connect with like-minded individuals passionate about sustainability and climate action.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Transparent Funding',
+        description: 'Track every dollar and see exactly how your contributions create real-world change.',
+        icon: 'tabler:eye-check',
+      },
+      {
+        title: 'Innovation Focus',
+        description: 'Support cutting-edge solutions that address climate challenges with technology and creativity.',
+        icon: 'tabler:bulb',
+      },
+      {
+        title: 'Local to Global',
+        description: 'From neighborhood initiatives to worldwide movements, every project matters.',
+        icon: 'tabler:world',
+      },
+      {
+        title: 'Collaboration Tools',
+        description: 'Built-in features to help project creators and supporters work together effectively.',
+        icon: 'tabler:tools',
+      },
+      {
+        title: 'Proven Results',
+        description: 'Join a platform committed to measuring and sharing the impact of every initiative.',
+        icon: 'tabler:chart-line',
+      },
+    ]}
+  />
 
-/* Custom styling for hero section */
-.hero-earthject {
-  background: linear-gradient(135deg, var(--earthject-primary) 0%, var(--earthject-primary-light) 100%);
-}
+  <!-- Content Widget -->
+  <Content
+    isReversed
+    tagline="How It Works"
+    title="Simple Steps to Create Change"
+    items={[
+      {
+        title: 'Launch Your Vision',
+        description: 'Share your climate action idea with detailed plans, goals, and funding targets.',
+      },
+      {
+        title: 'Build Your Community',
+        description: 'Connect with supporters, collaborators, and other changemakers who share your passion.',
+      },
+      {
+        title: 'Make It Happen',
+        description: 'Use funding and community support to implement your project and track real impact.',
+      },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Ready to make a difference?</h3>
+      Whether you're launching a solar initiative, organizing community gardens, or developing clean tech solutions.
+    </Fragment>
 
-/* Custom green backgrounds */
-.bg-green-earthject {
-  background-color: var(--earthject-primary);
-}
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-green-50 dark:bg-slate-800"></div>
+    </Fragment>
+  </Content>
 
-.bg-green-light-earthject {
-  background-color: #f0f9f0;
-}
+  <!-- Featured Projects Section -->
+  <Features2
+    title="Featured Projects"
+    subtitle="Discover inspiring climate action initiatives from our community"
+    tagline="Community Impact"
+    items={[
+      {
+        title: 'Solar Schools Initiative',
+        description: 'Bringing renewable energy to rural schools across three states.',
+        icon: 'tabler:sun',
+      },
+      {
+        title: 'Urban Forest Network',
+        description: 'Creating green spaces and improving air quality in urban areas.',
+        icon: 'tabler:trees',
+      },
+      {
+        title: 'Ocean Cleanup Tech',
+        description: 'Developing innovative solutions for marine plastic pollution.',
+        icon: 'tabler:waves',
+      },
+      {
+        title: 'Community Composting',
+        description: 'Reducing food waste through neighborhood composting programs.',
+        icon: 'tabler:recycle',
+      },
+    ]}
+  />
 
-/* Custom link colors */
-a.text-earthject {
-  color: var(--earthject-primary);
-}
+  <!-- Stats Widget -->
+  <Stats
+    stats={[
+      { title: 'Projects Funded', amount: '47' },
+      { title: 'Community Members', amount: '1.2K' },
+      { title: 'CO2 Reduced (tons)', amount: '890' },
+      { title: 'Countries Reached', amount: '12' },
+    ]}
+  />
 
-a.text-earthject:hover {
-  color: var(--earthject-primary-dark);
-}
+  <!-- Steps Widget -->
+  <Steps
+    title="Join the Earthject Community"
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium">Explore Projects</span>',
+        description: 'Browse current initiatives and see how others are making a difference in climate action.',
+        icon: 'tabler:search',
+      },
+      {
+        title: 'Step 2: <span class="font-medium">Get Involved</span>',
+        description: 'Support projects financially, volunteer your skills, or collaborate on solutions.',
+        icon: 'tabler:heart-handshake',
+      },
+      {
+        title: 'Step 3: <span class="font-medium">Create Impact</span>',
+        description: 'Launch your own project or help existing ones reach their goals and measure real-world impact.',
+        icon: 'tabler:rocket',
+      },
+    ]}
+  />
 
-/* Stats section custom styling */
-.stats-earthject .stat-number {
-  color: var(--earthject-accent);
-  font-weight: 700;
-}
+  <!-- FAQs Widget -->
+  <FAQs
+    title="Frequently Asked Questions"
+    subtitle="Find answers to common questions about Earthject and how our platform works."
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'How is Earthject different from other crowdfunding platforms?',
+        description: 'Earthject focuses exclusively on climate action and sustainability projects. We provide collaboration tools, impact tracking, and community features designed specifically for environmental initiatives.',
+      },
+      {
+        title: 'What types of projects can I launch?',
+        description: 'Any project that contributes to climate action, sustainability, or environmental improvement. This includes renewable energy, conservation, clean tech, community gardens, education initiatives, and more.',
+      },
+      {
+        title: 'How do you ensure project transparency?',
+        description: 'All projects must provide detailed plans, regular updates, and impact metrics. We work with project creators to establish measurable goals and track progress throughout the initiative.',
+      },
+      {
+        title: 'What fees does Earthject charge?',
+        description: 'We keep our fees low to maximize impact. Platform fees are 5% of successfully funded projects, with payment processing fees additional. Full fee structure is available in our terms.',
+      },
+      {
+        title: 'Can I collaborate with other community members?',
+        description: 'Absolutely! Earthject includes built-in collaboration tools, community forums, and networking features to connect project creators, supporters, and skill contributors.',
+      },
+      {
+        title: 'How do I track the impact of projects I support?',
+        description: 'Project creators provide regular updates with photos, data, and measurable outcomes. You will receive notifications about milestones and can see detailed impact reports.',
+      },
+    ]}
+  />
 
-/* Custom icons with brand colors */
-.icon-earthject {
-  color: var(--earthject-primary);
-}
+  <!-- CallToAction Widget -->
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Start Your Project',
+        href: '/start-project',
+        icon: 'tabler:rocket',
+      },
+      {
+        variant: 'secondary',
+        text: 'Join Community',
+        href: '/community',
+        icon: 'tabler:users',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Ready to <br class="block sm:hidden" /><span class="sm:whitespace-nowrap">create lasting change?</span>
+    </Fragment>
 
-.icon-accent-earthject {
-  color: var(--earthject-accent);
-}
-
-/* Navigation customization */
-.navbar-earthject {
-  background-color: rgba(48, 96, 44, 0.95);
-  backdrop-filter: blur(10px);
-}
-
-/* Footer customization */
-.footer-earthject {
-  background-color: var(--earthject-primary-dark);
-}
-
-.footer-earthject a {
-  color: #ffffff;
-  opacity: 0.8;
-}
-
-.footer-earthject a:hover {
-  color: var(--earthject-accent);
-  opacity: 1;
-}
-
-/* Social media icons */
-.social-earthject {
-  color: var(--earthject-accent);
-  transition: all 0.3s ease;
-}
-
-.social-earthject:hover {
-  color: var(--earthject-accent-light);
-  transform: translateY(-2px);
-}
-
-/* Card styling for projects */
-.project-card-earthject {
-  border: 2px solid transparent;
-  transition: all 0.3s ease;
-}
-
-.project-card-earthject:hover {
-  border-color: var(--earthject-accent);
-  transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(48, 96, 44, 0.1);
-}
+    <Fragment slot="subtitle">
+      Join thousands of changemakers using Earthject to fund climate action and build sustainable communities.
+    </Fragment>
+  </CallToAction>
+</Layout>
