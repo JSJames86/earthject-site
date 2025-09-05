@@ -28,7 +28,19 @@ export const TAG_BASE = cleanSlug(APP_BLOG?.tag?.pathname) || 'tag';
 export const POST_PERMALINK_PATTERN = trimSlash(APP_BLOG?.post?.permalink || `${BLOG_BASE}/%slug%`);
 
 /** */
-export const getCanonical = (path = ''): string | URL => {
+export const getCanonical = (path = ''): string => {
+  // Validate SITE.site before using it as a base for new URL
+  if (!SITE?.site || typeof SITE.site !== 'string' || !/^https?:\/\//.test(SITE.site)) {
+    // Fallback to root-relative canonical URL if SITE.site is invalid
+    const url = path.startsWith('/') ? path : '/' + path;
+    return SITE.trailingSlash == false && url.endsWith('/')
+      ? url.slice(0, -1)
+      : SITE.trailingSlash == true && !url.endsWith('/')
+      ? url + '/'
+      : url;
+  }
+
+  // Normal canonical logic
   const url = String(new URL(path, SITE.site));
   if (SITE.trailingSlash == false && path && url.endsWith('/')) {
     return url.slice(0, -1);
