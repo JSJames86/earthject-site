@@ -1,20 +1,4 @@
----
-// You will need to install swiper.js with `npm install swiper`
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-fade';
-
-import Swiper from 'swiper';
-import { Navigation, Pagination, EffectFade } from 'swiper/modules';
-
-const uniqueId = 'swiper-' + Math.random().toString(36).substring(7);
----
-
-<div class="relative w-full aspect-[4/3] sm:aspect-video overflow-hidden group">
-  <div id={uniqueId} class="swiper h-full">
-    <div class="swiper-wrapper">
-      <!-- Slide 1: Image -->
+<!-- Slide 1: Image -->
       <div class="swiper-slide relative">
         <img
           src="/assets/images/hands-touching-a-tree-trunk.jpg"
@@ -22,7 +6,6 @@ const uniqueId = 'swiper-' + Math.random().toString(36).substring(7);
           alt="Hands touching a tree trunk."
         />
       </div>
-
       <!-- Slide 2: Image -->
       <div class="swiper-slide relative">
         <img
@@ -31,7 +14,6 @@ const uniqueId = 'swiper-' + Math.random().toString(36).substring(7);
           alt="Two people planting a tree."
         />
       </div>
-
       <!-- Slide 3: Image -->
       <div class="swiper-slide relative">
         <img
@@ -40,7 +22,6 @@ const uniqueId = 'swiper-' + Math.random().toString(36).substring(7);
           alt="A large, mature tree."
         />
       </div>
-
       <!-- Slide 4: Image -->
       <div class="swiper-slide relative">
         <img
@@ -49,7 +30,6 @@ const uniqueId = 'swiper-' + Math.random().toString(36).substring(7);
           alt="A zero-waste grocery bag."
         />
       </div>
-
       <!-- Slide 5: Image -->
       <div class="swiper-slide relative">
         <img
@@ -58,44 +38,3 @@ const uniqueId = 'swiper-' + Math.random().toString(36).substring(7);
           alt="Hands planting a row of crops."
         />
       </div>
-    </div>
-    <!-- If we need pagination -->
-    <div class="swiper-pagination"></div>
-
-    <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev w-10 h-10 bg-white/50 rounded-full flex items-center justify-center transition-opacity duration-300 opacity-0 group-hover:opacity-100"></div>
-    <div class="swiper-button-next w-10 h-10 bg-white/50 rounded-full flex items-center justify-center transition-opacity duration-300 opacity-0 group-hover:opacity-100"></div>
-  </div>
-</div>
-
-<script>
-  import 'swiper/css';
-  import 'swiper/css/navigation';
-  import 'swiper/css/pagination';
-  import 'swiper/css/effect-fade';
-
-  import Swiper from 'swiper';
-  import { Navigation, Pagination, EffectFade } from 'swiper/modules';
-
-  document.addEventListener('astro:load', () => {
-    new Swiper(`#${uniqueId}`, {
-      modules: [Navigation, Pagination, EffectFade],
-      effect: 'fade',
-      loop: true,
-      fadeEffect: {
-        crossFade: true
-      },
-      // If we need pagination
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-
-      // Navigation arrows
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
-  });
-</script>
