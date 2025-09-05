@@ -1,0 +1,92 @@
+---
+import { getAsset } from '~/utils/permalinks';
+
+// Define the content for the carousel. You can add more images and videos here.
+const slides = [
+  {
+    type: 'image',
+    src: getAsset('/images/image1.jpg'),
+    alt: 'A photo of a lush, green forest.',
+  },
+  {
+    type: 'video',
+    src: getAsset('/images/video1.mp4'),
+    alt: 'A video of a team cleaning up a beach.',
+  },
+  {
+    type: 'image',
+    src: getAsset('/images/image2.jpg'),
+    alt: 'A photo of a solar panel installation.',
+  },
+  {
+    type: 'video',
+    src: getAsset('/images/video2.mp4'),
+    alt: 'A video showing a wind turbine in action.',
+  },
+];
+---
+
+<section class="w-full h-screen relative overflow-hidden">
+  <!-- Swiper container -->
+  <div class="swiper-container w-full h-full">
+    <div class="swiper-wrapper">
+      {slides.map((slide) => (
+        <div class="swiper-slide w-full h-full relative">
+          {slide.type === 'image' ? (
+            <img
+              src={slide.src}
+              alt={slide.alt}
+              class="w-full h-full object-cover"
+            />
+          ) : (
+            <video
+              src={slide.src}
+              alt={slide.alt}
+              class="w-full h-full object-cover"
+              autoplay
+              loop
+              muted
+              playsinline
+            ></video>
+          )}
+          <!-- Optional: Add an overlay for better text contrast -->
+          <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+          <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white p-4 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold">{slide.alt}</h2>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- Add Navigation Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>
+
+<script>
+  import Swiper from 'swiper';
+  import { Pagination, Navigation } from 'swiper/modules';
+  import 'swiper/css';
+  import 'swiper/css/pagination';
+  import 'swiper/css/navigation';
+
+  const swiper = new Swiper('.swiper-container', {
+    modules: [Pagination, Navigation],
+    loop: true,
+    autoplay: {
+      delay: 5000,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+</script>
