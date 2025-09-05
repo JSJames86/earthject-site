@@ -1,0 +1,281 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+
+const metadata = {
+  title: 'Environmental Projects — Earthject',
+  description: 'Discover impactful environmental initiatives from around the world. From reforestation to clean energy, every project creates lasting change for our planet.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero -->
+  <Hero
+    tagline="Environmental Projects"
+    title="Discover Projects That Change the World"
+    subtitle="From reforestation to clean energy, every project creates lasting change for our planet. Explore the initiatives that will be available when Earthject launches."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Join Waitlist',
+        href: '/contact',
+        icon: 'tabler:plant',
+      },
+      {
+        text: 'How It Works',
+        href: '/how-it-works',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Environmental projects hero image',
+    }}
+  />
+
+  <!-- Project Statistics -->
+  <Stats
+    title="Global Environmental Impact"
+    subtitle="Projects launching on Earthject will create measurable change worldwide"
+    stats={[
+      { amount: '500+', title: 'Projects Launching' },
+      { amount: '89', title: 'Countries Represented' },
+      { amount: '12M+', title: 'Trees to be Planted' },
+      { amount: '2.5K', title: 'MW Clean Energy' },
+    ]}
+  />
+
+  <!-- Project Categories -->
+  <Features
+    id="categories"
+    tagline="Project Categories"
+    title="Types of Environmental Projects"
+    subtitle="Explore different categories of environmental projects you can support when Earthject launches"
+    items={[
+      {
+        title: 'Reforestation & Conservation',
+        description: 'Tree planting initiatives, forest restoration, and habitat conservation projects protecting biodiversity worldwide.',
+        icon: 'tabler:trees',
+        callToAction: {
+          text: '120+ Projects',
+          href: '#',
+          variant: 'link',
+        },
+      },
+      {
+        title: 'Renewable Energy',
+        description: 'Solar, wind, and hydroelectric projects bringing clean energy to communities and reducing carbon emissions.',
+        icon: 'tabler:bolt',
+        callToAction: {
+          text: '85+ Projects',
+          href: '#',
+          variant: 'link',
+        },
+      },
+      {
+        title: 'Water & Ocean Conservation',
+        description: 'Clean water initiatives, ocean cleanup efforts, and marine ecosystem restoration projects.',
+        icon: 'tabler:droplet',
+        callToAction: {
+          text: '95+ Projects',
+          href: '#',
+          variant: 'link',
+        },
+      },
+      {
+        title: 'Sustainable Communities',
+        description: 'Urban sustainability projects, green infrastructure, and community-led environmental initiatives.',
+        icon: 'tabler:building-community',
+        callToAction: {
+          text: '110+ Projects',
+          href: '#',
+          variant: 'link',
+        },
+      },
+      {
+        title: 'Wildlife Protection',
+        description: 'Endangered species conservation, wildlife corridors, and anti-poaching initiatives across the globe.',
+        icon: 'tabler:paw',
+        callToAction: {
+          text: '70+ Projects',
+          href: '#',
+          variant: 'link',
+        },
+      },
+      {
+        title: 'Sustainable Agriculture',
+        description: 'Regenerative farming, permaculture initiatives, and projects promoting sustainable food systems.',
+        icon: 'tabler:plant-2',
+        callToAction: {
+          text: '60+ Projects',
+          href: '#',
+          variant: 'link',
+        },
+      },
+    ]}
+  />
+
+  <!-- Featured Projects Section -->
+  <section class="px-4 py-16 mx-auto max-w-7xl lg:px-8 lg:py-20">
+    <div class="mb-8 md:mx-auto md:mb-12 text-center max-w-3xl">
+      <p class="text-base text-primary dark:text-blue-200 font-semibold tracking-wide uppercase">Featured Projects</p>
+      <h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200">
+        Preview of Coming Projects
+      </h2>
+      <p class="max-w-3xl mx-auto text-xl text-muted dark:text-slate-400">
+        Get a preview of the impactful projects that will be available when Earthject launches
+      </p>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 items-start">
+      <!-- Amazon Project -->
+      <div class="bg-white dark:bg-slate-900 rounded-lg shadow-lg overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1574482620415-d039b6b0dccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+          alt="Amazon Rainforest"
+          class="w-full h-48 object-cover"
+        />
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Amazon Rainforest Restoration</h3>
+            <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Featured</span>
+          </div>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">📍 Acre, Brazil</p>
+          <p class="text-gray-700 dark:text-gray-300 mb-4">
+            Large-scale reforestation project working with indigenous communities to restore 50,000 hectares of degraded Amazon rainforest.
+          </p>
+          <div class="mb-4">
+            <div class="flex justify-between text-sm text-gray-600 dark:text-gray-400 mb-1">
+              <span class="font-semibold text-green-600">$780K raised</span>
+              <span>of $1M goal</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2">
+              <div class="bg-green-600 h-2 rounded-full" style="width: 78%"></div>
+            </div>
+          </div>
+          <div class="bg-green-50 dark:bg-green-900/20 p-3 rounded-lg">
+            <p class="text-xs font-semibold text-green-800 dark:text-green-400 mb-1">Expected Impact:</p>
+            <p class="text-xs text-green-700 dark:text-green-300">50,000 trees planted • 125,000 tons CO2 captured • 200 species habitats restored</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Solar Project -->
+      <div class="bg-white dark:bg-slate-900 rounded-lg shadow-lg overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+          alt="Solar panels"
+          class="w-full h-48 object-cover"
+        />
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Rural Solar Microgrid Network</h3>
+            <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded">Trending</span>
+          </div>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">📍 Rajasthan, India</p>
+          <p class="text-gray-700 dark:text-gray-300 mb-4">
+            Installing solar microgrids in 25 remote villages to provide clean electricity to 15,000 people.
+          </p>
+          <div class="mb-4">
+            <div class="flex justify-between text-sm text-gray-600 dark:text-gray-400 mb-1">
+              <span class="font-semibold text-green-600">$225K raised</span>
+              <span>of $500K goal</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2">
+              <div class="bg-green-600 h-2 rounded-full" style="width: 45%"></div>
+            </div>
+          </div>
+          <div class="bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded-lg">
+            <p class="text-xs font-semibold text-yellow-800 dark:text-yellow-400 mb-1">Expected Impact:</p>
+            <p class="text-xs text-yellow-700 dark:text-yellow-300">500 kW clean energy • 15,000 people served • 1,200 tons CO2 prevented annually</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sea Turtle Project -->
+      <div class="bg-white dark:bg-slate-900 rounded-lg shadow-lg overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+          alt="Sea turtle"
+          class="w-full h-48 object-cover"
+        />
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Pacific Sea Turtle Sanctuary</h3>
+            <span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">Urgent</span>
+          </div>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">📍 Costa Rica</p>
+          <p class="text-gray-700 dark:text-gray-300 mb-4">
+            Establishing protected nesting beaches and rescue facilities for endangered sea turtles.
+          </p>
+          <div class="mb-4">
+            <div class="flex justify-between text-sm text-gray-600 dark:text-gray-400 mb-1">
+              <span class="font-semibold text-green-600">$186K raised</span>
+              <span>of $300K goal</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2">
+              <div class="bg-green-600 h-2 rounded-full" style="width: 62%"></div>
+            </div>
+          </div>
+          <div class="bg-blue-50 dark:bg-blue-900/20 p-3 rounded-lg">
+            <p class="text-xs font-semibold text-blue-800 dark:text-blue-400 mb-1">Expected Impact:</p>
+            <p class="text-xs text-blue-700 dark:text-blue-300">3 nesting beaches protected • 500+ turtles saved annually • 50 local jobs created</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Alpine Project -->
+      <div class="bg-white dark:bg-slate-900 rounded-lg shadow-lg overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+          alt="Swiss Alps"
+          class="w-full h-48 object-cover"
+        />
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Alpine Ecosystem Recovery</h3>
+            <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">New</span>
+          </div>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">📍 Swiss Alps</p>
+          <p class="text-gray-700 dark:text-gray-300 mb-4">
+            Restoring high-altitude ecosystems affected by climate change through native species reintroduction.
+          </p>
+          <div class="mb-4">
+            <div class="flex justify-between text-sm text-gray-600 dark:text-gray-400 mb-1">
+              <span class="font-semibold text-green-600">$92K raised</span>
+              <span>of $400K goal</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2">
+              <div class="bg-green-600 h-2 rounded-full" style="width: 23%"></div>
+            </div>
+          </div>
+          <div class="bg-purple-50 dark:bg-purple-900/20 p-3 rounded-lg">
+            <p class="text-xs font-semibold text-purple-800 dark:text-purple-400 mb-1">Expected Impact:</p>
+            <p class="text-xs text-purple-700 dark:text-purple-300">5,000 hectares restored • 12 endemic species protected • Carbon sink enhanced</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <CallToAction
+    title="Ready to Make an Impact?"
+    subtitle="Join thousands of environmental champions who are already preparing to support these crucial projects when Earthject launches."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Join the Waitlist',
+        href: '/contact',
+        icon: 'tabler:plant',
+      },
+      {
+        text: 'Learn How It Works',
+        href: '/how-it-works',
+      },
+    ]}
+  />
+</Layout>
