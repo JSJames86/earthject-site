@@ -7,10 +7,12 @@ import 'swiper/css/effect-fade';
 
 import Swiper from 'swiper';
 import { Navigation, Pagination, EffectFade } from 'swiper/modules';
+
+const uniqueId = 'swiper-' + Math.random().toString(36).substring(7);
 ---
 
 <div class="relative w-full aspect-[4/3] sm:aspect-video overflow-hidden group">
-  <div class="swiper h-full">
+  <div id={uniqueId} class="swiper h-full">
     <div class="swiper-wrapper">
       <!-- Slide 1: Image -->
       <div class="swiper-slide relative">
@@ -31,7 +33,6 @@ import { Navigation, Pagination, EffectFade } from 'swiper/modules';
       </div>
 
       <!-- Slide 3: Image -->
-      <div class="swiper-slide relative">
         <img
           src="/assets/images/big-tree.jpg"
           class="w-full h-full object-cover"
@@ -77,7 +78,7 @@ import { Navigation, Pagination, EffectFade } from 'swiper/modules';
 
   document.addEventListener('astro:load', () => {
     // We can now target the swiper directly, without a unique ID, which is more reliable.
-    const swiper = document.querySelector('.swiper');
+    const swiper = document.getElementById('{uniqueId}');
     if (swiper) {
       new Swiper(swiper, {
         modules: [Navigation, Pagination, EffectFade],
