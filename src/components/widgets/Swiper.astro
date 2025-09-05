@@ -33,6 +33,7 @@ const uniqueId = 'swiper-' + Math.random().toString(36).substring(7);
       </div>
 
       <!-- Slide 3: Image -->
+      <div class="swiper-slide relative">
         <img
           src="/assets/images/big-tree.jpg"
           class="w-full h-full object-cover"
@@ -77,7 +78,8 @@ const uniqueId = 'swiper-' + Math.random().toString(36).substring(7);
   import { Navigation, Pagination, EffectFade } from 'swiper/modules';
 
   document.addEventListener('astro:load', () => {
-    // We can now target the swiper directly, without a unique ID, which is more reliable.
+    // The Astro component's uniqueId variable is injected into the HTML.
+    // We now reference it correctly in the JavaScript.
     const swiper = document.getElementById('{uniqueId}');
     if (swiper) {
       new Swiper(swiper, {
