@@ -14,23 +14,21 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Section -->
   <Hero>
     <Fragment slot="title">
       About <span class="text-accent dark:text-white highlight">Earthject</span>
     </Fragment>
     <Fragment slot="subtitle">
       <span class="text-xl">
-        Connecting people, projects, and technology to create sustainable solutions for communities around the world.
+        Connecting people, projects, and technology to create sustainable solutions for a better world. 🌱
       </span>
     </Fragment>
   </Hero>
 
-  <!-- Mission & Vision -->
   <Content
     tagline="Our Mission"
-    title="A Future Where Climate Action is Collective"
-    subtitle="Earthject exists to connect people, projects, and technology to create sustainable solutions for communities around the world. Our vision is a future where climate action is collective, accessible, and powered by everyday people — not just institutions."
+    title="Collective Action for a Better World"
+    subtitle="Earthject empowers a global community to move from intention to tangible impact. Our mission is to make climate action collective, accessible, and powered by everyday people—not just institutions."
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4">Why This Matters</h3>
@@ -47,7 +45,6 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <!-- What Makes Earthject Different -->
   <Features
     id="different"
     tagline="Why Earthject"
@@ -56,12 +53,12 @@ const metadata = {
     items={[
       {
         title: 'Ecosystem Approach',
-        description: 'More than just funding — we connect projects, supporters, and collaborators in a thriving community ecosystem.',
+        description: 'We\'re an ecosystem for impact, not just a funding platform. We connect projects, supporters, and collaborators in a thriving community.',
         icon: 'tabler:plant',
       },
       {
         title: 'Interactive Social Features',
-        description: 'Giving Flowers (likes), Sending Leaves (shares), and Planting Seeds (donations) make climate action engaging and fun.',
+        description: 'Our interactive social features—Giving Flowers (likes), Sending Leaves (shares), and Planting Seeds (donations)—make climate action engaging and fun.',
         icon: 'tabler:heart',
       },
       {
@@ -87,22 +84,22 @@ const metadata = {
     ]}
   />
 
-  <!-- Founder Story -->
   <Content
     isReversed
     tagline="Our Story"
-    title="Founded by Janelle — Developer, Sustainability Advocate, Believer in Collective Action"
+    title="From Code to Climate Action"
+    subtitle="How One Developer's Frustration Became a Force for Good."
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4">From Code to Climate Action</h3>
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4">Founded by Janelle</h3>
       <p class="text-lg mb-4">
-        Earthject was founded by <strong>Janelle</strong>, a developer and entrepreneur passionate about sustainability, technology, and the power of collective action. With a background in building digital communities and solving complex problems through code, Janelle saw an opportunity to apply these skills to the climate crisis.
+        Hi, I'm **Janelle**, the founder of Earthject. Like many people, I often felt overwhelmed by the scale of environmental and social issues. I saw countless documentaries and read countless articles, but I was left wondering, "What can I, as one person, actually do?"
       </p>
       <p class="text-lg mb-4">
-        The idea for Earthject came from a simple belief: <em>individual actions, when connected, can scale into global change.</em> After seeing countless passionate people struggle to fund their environmental projects, and watching supporters feel disconnected from the impact of their contributions, Janelle knew there had to be a better way.
+        I realized that the feeling of helplessness was a common thread. So, I started building Earthject as a solution—a way to turn that feeling of frustration into a force for good.
       </p>
       <p class="text-lg">
-        Earthject combines Janelle's technical expertise with a deep commitment to environmental justice, community building, and transparent impact measurement. It's more than a platform — it's a movement toward collaborative climate action.
+        This isn't just a platform for me; it's for everyone who wants to be part of the solution. It's a testament to what we can achieve when we stop feeling powerless and start acting powerfully, together.
       </p>
     </Fragment>
 
@@ -111,7 +108,6 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <!-- Values -->
   <Features2
     title="Our Core Values"
     subtitle="The principles that guide everything we do at Earthject"
@@ -140,7 +136,6 @@ const metadata = {
     ]}
   />
 
-  <!-- Impact Goals -->
   <Stats
     title="Our Impact Goals"
     subtitle="What we're working toward together as a community"
@@ -152,7 +147,6 @@ const metadata = {
     ]}
   />
 
-  <!-- What We Support -->
   <Content
     tagline="Impact Areas"
     title="Supporting Change at Every Scale"
@@ -160,59 +154,4 @@ const metadata = {
     items={[
       {
         title: 'Renewable Energy',
-        description: 'Solar installations, wind projects, and clean energy access for underserved communities.',
-      },
-      {
-        title: 'Ecosystem Protection',
-        description: 'Forest conservation, ocean cleanup, biodiversity preservation, and habitat restoration.',
-      },
-      {
-        title: 'Sustainable Communities',
-        description: 'Urban gardens, composting programs, sustainable transportation, and green infrastructure.',
-      },
-      {
-        title: 'Climate Education',
-        description: 'Environmental education programs, climate literacy, and sustainability skill-building.',
-      },
-      {
-        title: 'Green Innovation',
-        description: 'Clean technology development, sustainable products, and climate solution research.',
-      },
-      {
-        title: 'Policy and Advocacy',
-        description: 'Grassroots organizing, policy research, and advocacy for environmental justice.',
-      },
-    ]}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Every Project Matters</h3>
-      Whether you're organizing a neighborhood cleanup or developing breakthrough clean technology, Earthject provides the platform, community, and resources to help your vision become reality.
-    </Fragment>
-  </Content>
-
-  <!-- Call to Action -->
-  <CallToAction
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Start Your Project',
-        href: '/start-project',
-        icon: 'tabler:rocket',
-      },
-      {
-        variant: 'secondary',
-        text: 'Join Our Community',
-        href: '/community',
-        icon: 'tabler:users',
-      },
-    ]}
-  >
-    <Fragment slot="title">
-      Ready to Join the Movement?
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      Whether you're a project creator, supporter, or collaborator, there's a place for you in the Earthject community. Let's build a sustainable future together.
-    </Fragment>
-  </CallToAction>
-</Layout>
+        description: 'Solar installations, wind projects, and clean energy access for underserved communities
