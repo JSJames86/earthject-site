@@ -1,0 +1,10 @@
+:root {
+  /* Define your custom theme colors below */
+  --aw-color-primary: #30602C; /* Earth Green */
+  --aw-color-secondary: #B9D8AF; /* Soft Green */
+  --aw-color-accent: #DDAF27; /* Solar Yellow */
+  --aw-color-text-default: #111827; /* Dark text */
+  --aw-color-text-muted: #6b7280;   /* Muted text */
+  --aw-color-bg-page: #ffffff;      /* Page background */
+  --aw-color-bg-page-dark: #000000;
+}
