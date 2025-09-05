@@ -31,6 +31,13 @@ export const POST_PERMALINK_PATTERN = trimSlash(APP_BLOG?.post?.permalink || `${
 export const getCanonical = (path = ''): string => {
   // Validate SITE.site before using it as a base for new URL
   if (!SITE?.site || typeof SITE.site !== 'string' || !/^https?:\/\//.test(SITE.site)) {
+    if (typeof console !== "undefined") {
+      // eslint-disable-next-line no-console
+      console.warn(
+        "Warning: SITE.site is not a valid absolute URL. Falling back to root-relative canonical URL.",
+        { SITE }
+      );
+    }
     // Fallback to root-relative canonical URL if SITE.site is invalid
     const url = path.startsWith('/') ? path : '/' + path;
     return SITE.trailingSlash == false && url.endsWith('/')
