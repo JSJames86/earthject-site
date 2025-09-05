@@ -1,10 +1,9 @@
-site:
-  name: "Earthject"
-  title: "Earthject — Sustainable Solutions for a Better World"
-  description: "Crowdfunding climate action through community impact"
-  url: "https://earthject.com"  # Replace with your custom domain when ready
-  author: "Earthject Team"
-  language: "en-US"
+site: "https://earthject.com"
+name: "Earthject"
+title: "Earthject — Sustainable Solutions for a Better World"
+description: "Crowdfunding climate action through community impact"
+author: "Earthject Team"
+language: "en-US"
 
 social:
   twitter: "https://x.com/earthject?s=21&t=43GaHG5AuaSXcDsOKAFLTQ"
