@@ -1,228 +1,218 @@
 ---
-import Features2 from '~/components/widgets/Features2.astro';
-import Features3 from '~/components/widgets/Features3.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'About us',
+  title: 'About Earthject — Our Mission for Sustainable Change',
+  description: 'Learn about Earthject\'s mission to connect people, projects, and technology for climate action. Founded by Janelle to make sustainability collective and accessible.',
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-
-  <Hero
-    tagline="About us"
-    image={{
-      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Caos Image',
-    }}
-  >
+  <!-- Hero Section -->
+  <Hero>
     <Fragment slot="title">
-      Elevate your online presence with our <br />
-      <span class="text-accent dark:text-white"> Beautiful Website Templates</span>
+      About <span class="text-accent dark:text-white highlight">Earthject</span>
     </Fragment>
-
     <Fragment slot="subtitle">
-      Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec
-      quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus.
-      Suspendisse vitae nisi eget tortor luctus maximus sed non lectus.
+      <span class="text-xl">
+        Connecting people, projects, and technology to create sustainable solutions for communities around the world.
+      </span>
     </Fragment>
   </Hero>
 
-  <!-- Stats Widget ****************** -->
+  <!-- Mission & Vision -->
+  <Content
+    tagline="Our Mission"
+    title="A Future Where Climate Action is Collective"
+    subtitle="Earthject exists to connect people, projects, and technology to create sustainable solutions for communities around the world. Our vision is a future where climate action is collective, accessible, and powered by everyday people — not just institutions."
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4">Why This Matters</h3>
+      <p class="text-lg mb-4">
+        Climate change requires solutions at every level — from individual actions to global initiatives. But too often, these efforts happen in isolation. People want to help, but don't know where to start. Great projects need funding, but struggle to reach supporters. Technology exists to solve problems, but lacks the community to implement it.
+      </p>
+      <p class="text-lg">
+        Earthject bridges these gaps, creating an ecosystem where passion meets purpose, and small actions combine to create massive change.
+      </p>
+    </Fragment>
 
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-green-50 dark:bg-slate-800"></div>
+    </Fragment>
+  </Content>
+
+  <!-- What Makes Earthject Different -->
+  <Features
+    id="different"
+    tagline="Why Earthject"
+    title="More Than Crowdfunding — An Ecosystem for Impact"
+    subtitle="Earthject combines funding, collaboration, and accountability in one platform, with unique social features that make climate action interactive and community-driven."
+    items={[
+      {
+        title: 'Ecosystem Approach',
+        description: 'More than just funding — we connect projects, supporters, and collaborators in a thriving community ecosystem.',
+        icon: 'tabler:plant',
+      },
+      {
+        title: 'Interactive Social Features',
+        description: 'Giving Flowers (likes), Sending Leaves (shares), and Planting Seeds (donations) make climate action engaging and fun.',
+        icon: 'tabler:heart',
+      },
+      {
+        title: 'Full-Circle Impact',
+        description: 'Track progress, earn recognition, and contribute to sustainability insights that help the entire community.',
+        icon: 'tabler:refresh',
+      },
+      {
+        title: 'Collaboration Over Competition',
+        description: 'Built-in tools for project creators and supporters to work together, share resources, and amplify impact.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Transparency by Design',
+        description: 'Every dollar tracked, every milestone shared, every impact measured and reported back to the community.',
+        icon: 'tabler:eye-check',
+      },
+      {
+        title: 'Accessible to Everyone',
+        description: 'Climate action for everyone, not just experts. Simple tools, clear guidance, and inclusive community.',
+        icon: 'tabler:accessibility',
+      },
+    ]}
+  />
+
+  <!-- Founder Story -->
+  <Content
+    isReversed
+    tagline="Our Story"
+    title="Founded by Janelle — Developer, Sustainability Advocate, Believer in Collective Action"
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4">From Code to Climate Action</h3>
+      <p class="text-lg mb-4">
+        Earthject was founded by <strong>Janelle</strong>, a developer and entrepreneur passionate about sustainability, technology, and the power of collective action. With a background in building digital communities and solving complex problems through code, Janelle saw an opportunity to apply these skills to the climate crisis.
+      </p>
+      <p class="text-lg mb-4">
+        The idea for Earthject came from a simple belief: <em>individual actions, when connected, can scale into global change.</em> After seeing countless passionate people struggle to fund their environmental projects, and watching supporters feel disconnected from the impact of their contributions, Janelle knew there had to be a better way.
+      </p>
+      <p class="text-lg">
+        Earthject combines Janelle's technical expertise with a deep commitment to environmental justice, community building, and transparent impact measurement. It's more than a platform — it's a movement toward collaborative climate action.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-slate-800"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Values -->
+  <Features2
+    title="Our Core Values"
+    subtitle="The principles that guide everything we do at Earthject"
+    tagline="Values"
+    items={[
+      {
+        title: 'Collaboration Over Competition',
+        description: 'We believe the biggest challenges require us to work together, not against each other.',
+        icon: 'tabler:handshake',
+      },
+      {
+        title: 'Transparency in Everything',
+        description: 'From funding flows to impact tracking, we believe in radical transparency and accountability.',
+        icon: 'tabler:eye',
+      },
+      {
+        title: 'Inclusivity and Accessibility',
+        description: 'Climate action is for everyone. We build tools and communities that welcome all voices and backgrounds.',
+        icon: 'tabler:world',
+      },
+      {
+        title: 'Long-term Impact Focus',
+        description: 'We support projects that grow like ecosystems — sustainable, interconnected, and built to last.',
+        icon: 'tabler:plant-2',
+      },
+    ]}
+  />
+
+  <!-- Impact Goals -->
   <Stats
-    title="Statistics about us"
+    title="Our Impact Goals"
+    subtitle="What we're working toward together as a community"
     stats={[
-      { title: 'Offices', amount: '4' },
-      { title: 'Employees', amount: '248' },
-      { title: 'Templates', amount: '12' },
-      { title: 'Awards', amount: '24' },
+      { title: 'Projects Supported', amount: '10K+', icon: 'tabler:rocket' },
+      { title: 'Community Members', amount: '1M+', icon: 'tabler:users' },
+      { title: 'Tons CO2 Reduced', amount: '100K+', icon: 'tabler:leaf' },
+      { title: 'Trees Planted', amount: '500K+', icon: 'tabler:tree' },
     ]}
   />
 
-  <!-- Features3 Widget ************** -->
-
-  <Features3
-    title="Our templates"
-    subtitle="Etiam scelerisque, enim eget vestibulum luctus, nibh mauris blandit nulla, nec vestibulum risus justo ut enim. Praesent lacinia diam et ante imperdiet euismod."
-    columns={3}
-    isBeforeContent={true}
+  <!-- What We Support -->
+  <Content
+    tagline="Impact Areas"
+    title="Supporting Change at Every Scale"
+    subtitle="From local community gardens to global renewable energy initiatives, Earthject supports projects that reduce carbon footprints, protect ecosystems, and empower communities."
     items={[
       {
-        title: 'Educational',
-        description:
-          'Morbi faucibus luctus quam, sit amet aliquet felis tempor id. Cras augue massa, ornare quis dignissim a, molestie vel nulla.',
-        icon: 'tabler:template',
+        title: 'Renewable Energy',
+        description: 'Solar installations, wind projects, and clean energy access for underserved communities.',
       },
       {
-        title: 'Interior Design',
-        description:
-          'Vivamus porttitor, tortor convallis aliquam pretium, turpis enim consectetur elit, vitae egestas purus erat ac nunc nulla.',
-        icon: 'tabler:template',
+        title: 'Ecosystem Protection',
+        description: 'Forest conservation, ocean cleanup, biodiversity preservation, and habitat restoration.',
       },
       {
-        title: 'Photography',
-        description:
-          'Duis sed lectus in nisl vehicula porttitor eget quis odio. Aliquam erat volutpat. Nulla eleifend nulla id sem fermentum.',
-        icon: 'tabler:template',
+        title: 'Sustainable Communities',
+        description: 'Urban gardens, composting programs, sustainable transportation, and green infrastructure.',
+      },
+      {
+        title: 'Climate Education',
+        description: 'Environmental education programs, climate literacy, and sustainability skill-building.',
+      },
+      {
+        title: 'Green Innovation',
+        description: 'Clean technology development, sustainable products, and climate solution research.',
+      },
+      {
+        title: 'Policy and Advocacy',
+        description: 'Grassroots organizing, policy research, and advocacy for environmental justice.',
       },
     ]}
-  />
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Every Project Matters</h3>
+      Whether you're organizing a neighborhood cleanup or developing breakthrough clean technology, Earthject provides the platform, community, and resources to help your vision become reality.
+    </Fragment>
+  </Content>
 
-  <!-- Features3 Widget ************** -->
-
-  <Features3
-    columns={3}
-    isAfterContent={true}
-    items={[
+  <!-- Call to Action -->
+  <CallToAction
+    actions={[
       {
-        title: 'E-commerce',
-        description:
-          'Rutrum non odio at vehicula. Proin ipsum justo, dignissim in vehicula sit amet, dignissim id quam. Sed ac tincidunt sapien.',
-        icon: 'tabler:template',
+        variant: 'primary',
+        text: 'Start Your Project',
+        href: '/start-project',
+        icon: 'tabler:rocket',
       },
       {
-        title: 'Blog',
-        description:
-          'Nullam efficitur volutpat sem sed fringilla. Suspendisse et enim eu orci volutpat laoreet ac vitae libero.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Business',
-        description:
-          'Morbi et elit finibus, facilisis justo ut, pharetra ipsum. Donec efficitur, ipsum quis congue luctus, mauris magna.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Branding',
-        description:
-          'Suspendisse vitae nisi eget tortor luctus maximus sed non lectus. Cras malesuada pretium placerat. Nullam venenatis dolor a ante rhoncus.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Medical',
-        description:
-          'Vestibulum malesuada lacus id nibh posuere feugiat. Nam volutpat nulla a felis ultrices, id suscipit mauris congue. In hac habitasse platea dictumst.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Fashion Design',
-        description:
-          'Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus.',
-        icon: 'tabler:template',
+        variant: 'secondary',
+        text: 'Join Our Community',
+        href: '/community',
+        icon: 'tabler:users',
       },
     ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Colorful Image',
-    }}
-  />
+  >
+    <Fragment slot="title">
+      Ready to Join the Movement?
+    </Fragment>
 
-  <!-- Steps2 Widget ****************** -->
-
-  <Steps2
-    title="Our values"
-    subtitle="Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus. Nulla facilisi. Vestibulum malesuada lacus."
-    items={[
-      {
-        title: 'Customer-centric approach',
-        description:
-          'Donec id nibh neque. Quisque et fermentum tortor. Fusce vitae dolor a mauris dignissim commodo. Ut eleifend luctus condimentum.',
-      },
-      {
-        title: 'Constant Improvement',
-        description:
-          'Phasellus laoreet fermentum venenatis. Vivamus dapibus pulvinar arcu eget mattis. Fusce eget mauris leo.',
-      },
-      {
-        title: 'Ethical Practices',
-        description:
-          'Vestibulum imperdiet libero et lectus molestie, et maximus augue porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
-      },
-    ]}
-  />
-
-  <!-- Steps2 Widget ****************** -->
-
-  <Steps2
-    title="Achievements"
-    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla, sed porttitor est nibh at nulla."
-    isReversed={true}
-    callToAction={{
-      text: 'See more',
-      href: '/',
-    }}
-    items={[
-      {
-        title: 'Global reach',
-        description: 'Nam malesuada urna in enim imperdiet tincidunt. Phasellus non tincidunt nisi, at elementum mi.',
-        icon: 'tabler:globe',
-      },
-      {
-        title: 'Positive customer feedback and reviews',
-        description:
-          'Cras semper nulla leo, eget laoreet erat cursus sed. Praesent faucibus massa in purus iaculis dictum.',
-        icon: 'tabler:message-star',
-      },
-      {
-        title: 'Awards and recognition as industry experts',
-        description:
-          'Phasellus lacinia cursus velit, eu malesuada magna pretium eu. Etiam aliquet tellus purus, blandit lobortis ex rhoncus vitae.',
-        icon: 'tabler:award',
-      },
-    ]}
-  />
-
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Our locations"
-    tagline="Find us"
-    columns={4}
-    items={[
-      {
-        title: 'EE.UU',
-        description: '1234 Lorem Ipsum St, 12345, Miami',
-      },
-      {
-        title: 'Spain',
-        description: '5678 Lorem Ipsum St, 56789, Madrid',
-      },
-      {
-        title: 'Australia',
-        description: '9012 Lorem Ipsum St, 90123, Sydney',
-      },
-      {
-        title: 'Brazil',
-        description: '3456 Lorem Ipsum St, 34567, São Paulo',
-      },
-    ]}
-  />
-
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Technical Support"
-    tagline="Contact us"
-    columns={2}
-    items={[
-      {
-        title: 'Chat with us',
-        description:
-          'Integer luctus laoreet libero, auctor varius purus rutrum sit amet. Ut nec molestie nisi, quis eleifend mi.',
-        icon: 'tabler:messages',
-      },
-      {
-        title: 'Call us',
-        description:
-          'Mauris faucibus finibus orci, in posuere elit viverra non. In hac habitasse platea dictumst. Cras lobortis metus a hendrerit congue.',
-        icon: 'tabler:headset',
-      },
-    ]}
-  />
+    <Fragment slot="subtitle">
+      Whether you're a project creator, supporter, or collaborator, there's a place for you in the Earthject community. Let's build a sustainable future together.
+    </Fragment>
+  </CallToAction>
 </Layout>
